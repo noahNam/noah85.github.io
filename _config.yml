@@ -189,3 +189,5 @@ exclude:
   - vendor/ruby/
 
 destination: ./build
+
+theme: jekyll-theme-dinky
