@@ -12,6 +12,7 @@ usemathjax: true
 ---
 
 ### 필요없는 내용삭제
+### 테스트
 
 <!-- <img src="/../../assets/img/cbnu.png" style="zoom:25%;" /> -->
 <!-- <img src="/../../assets/img/posts/cupist.png" style="zoom:80%;" /> -->
