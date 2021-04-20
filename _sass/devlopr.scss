@@ -44,10 +44,10 @@ html[data-theme="light"] {
     --button-background-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
      /* Dark Mode */
     html,
-    html[data-theme="light"] {
+    html[data-theme="dark"] {
         --bold-color: rgb(188, 188, 188);
         --box-background-color: hsl(0, 0%, 20%);
         --highlight-color: hsl(0, 0%, 60%);
