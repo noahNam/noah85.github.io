@@ -47,7 +47,7 @@ html[data-theme="light"] {
 @media (prefers-color-scheme: dark) {
      /* Dark Mode */
     html,
-    html[data-theme="dark"] {
+    html[data-theme="light"] {
         --bold-color: rgb(188, 188, 188);
         --box-background-color: hsl(0, 0%, 20%);
         --highlight-color: hsl(0, 0%, 60%);
