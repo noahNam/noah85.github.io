@@ -40,6 +40,12 @@ permalink: /blog/fastapi-init/
     def main():
         return {"Hello": "World"}
     ```
+- uvicorn 실행
+    
+    ```bash
+    $ uvicorn main:app --reload
+
+    ```    
 
 - 확인
 
