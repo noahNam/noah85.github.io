@@ -42,4 +42,5 @@ permalink: /blog/fastapi-init/
     ```
 
 - 확인
-- <img src="/../../assets/img/posts/fastapi-1/1.png" style="zoom:65%;" />
+
+<img src="/../../assets/img/posts/fastapi-1/1.png" style="zoom:65%;" />
