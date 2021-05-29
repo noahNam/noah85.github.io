@@ -5,7 +5,7 @@ summary: "fastapi init"
 author: noah
 date: '2021-05-29 23:47:23 +0900'
 category: framework
-thumbnail: /assets/img/posts/fastapi-1/fastapi.png
+thumbnail: /assets/img/posts/fastapi-init/fastapi.png
 keywords: framework, fastapi
 permalink: /blog/fastapi-init/
 ---
