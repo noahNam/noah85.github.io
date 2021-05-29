@@ -27,8 +27,8 @@ permalink: /blog/fastapi-init/
     $ poetry add uvicorn
     ```
 
-    - what is uvicorn? [링크](https://noahnam.github.io/blog/uvicorn/#/)
-<br>
+- what is uvicorn? [링크](https://noahnam.github.io/blog/uvicorn/#/)
+
 - `main.py` 작성
 
     ```python
@@ -42,4 +42,4 @@ permalink: /blog/fastapi-init/
     ```
 
 - 확인
-<img src="/../../assets/img/posts/fastapi-1/1.png" style="zoom:65%;" />
+- <img src="/../../assets/img/posts/fastapi-1/1.png" style="zoom:65%;" />
