@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>남기혁</title>
+    <description>남기혁-고민이 많은 개발자</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 26 Jun 2021 14:55:16 +0000</pubDate>
+    <lastBuildDate>Sat, 26 Jun 2021 14:55:16 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+
+    
+      <item>
+        <title>fastapi init</title>
+        <description>&lt;h1 id=&quot;fastapi로-실습을-해보기로-한다&quot;&gt;fastapi로 실습을 해보기로 한다.&lt;/h1&gt;
+
+&lt;h2 id=&quot;가상환경-구성&quot;&gt;&lt;br /&gt;가상환경 구성&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;poetry&lt;/code&gt;를 사용하여 가상환경을 구성한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;poetry init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fastapi&lt;/code&gt; package 설치한다. 추가적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uvicorn&lt;/code&gt; 패키지도 설치해 준다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;poetry add fastapi
+  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;poetry add uvicorn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;what is uvicorn? &lt;a href=&quot;https://noahnam.github.io/blog/uvicorn/#/&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.py&lt;/code&gt; 작성&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastapi&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FastAPI&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FastAPI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;World&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;uvicorn 실행&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;uvicorn main:app &lt;span class=&quot;nt&quot;&gt;--reload&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;확인&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/fastapi-init/1.png&quot; style=&quot;zoom:65%;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 May 2021 14:47:23 +0000</pubDate>
+        <link>/blog/fastapi-init/</link>
+        <guid isPermaLink="true">/blog/fastapi-init/</guid>
+      </item>
+    
+      <item>
+        <title>uvicorn</title>
+        <description>&lt;h2 id=&quot;uvicorn&quot;&gt;&lt;br /&gt;Uvicorn&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python에는 asyncio 프레임 워크를 위한 저수준 서버 / 애플리케이션 인터페이스가 없었는데, 이런 상황에서 Uvicorn이 등장했다.&lt;/li&gt;
+  &lt;li&gt;uvloop 및 httptools를 사용하는 초고속 ASGI web server이다.&lt;/li&gt;
+  &lt;li&gt;현재 HTTP / 1.1 및 WebSocket을 지원하고, HTTP / 2에 대한 지원이 계획되어 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;asgi&quot;&gt;&lt;br /&gt;ASGI&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ASGI(Asynchronous Server Gateway Interface)&lt;/li&gt;
+  &lt;li&gt;WSGI의 상위 호환&lt;/li&gt;
+  &lt;li&gt;web server와 프레임워크(Django), 어플리케이션을 비동기로 연결해 주는 Python의 표준 인터페이스&lt;/li&gt;
+  &lt;li&gt;여러 프로토콜 스타일을 처리 할 수 있다(HTTP, HTTP/2, WebSocket 포함)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;asyncio&quot;&gt;&lt;br /&gt;Asyncio&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Asyncio는 Python 표준 라이브러리와 함께 제공되는 비동기 I/O 프레임 워크&lt;/li&gt;
+  &lt;li&gt;async / await 구문을 사용하여 비동기(Asynchronous) 코드를 작성하는 라이브러리&lt;/li&gt;
+  &lt;li&gt;Asyncio는 대규모 I / O 처리 및 복잡하게 설계된 서버 구조에 적합
+    &lt;ul&gt;
+      &lt;li&gt;CPU 연산 시간 대비 DB나 API와 연동 과정에서 발생하는 대기 시간이 훨씬 긴 경우에 병목이 발생하는데 이를 해결하기 위해서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;uvloop&quot;&gt;&lt;br /&gt;uvloop&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;asyncio의 이벤트 루트 대체재로 asyncio를 더 빠르게 만들어 준다.&lt;/li&gt;
+  &lt;li&gt;Cython으로 작성되었으며 libuv 위에 구축
+    &lt;ul&gt;
+      &lt;li&gt;libuv는 nodejs에서 사용하는 고성능 다중 플랫폼 비동기 I/O 라이브러리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;실제 성능상에서 nodejs, gevent 및 기타 Python 비동기 프레임 워크보다 2배 이상 빠르고, 성능상으로만 본다면, uvloop 기반 asyncio의 성능은 Go 프로그램의 성능에 가깝습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/uvicorn/Untitled1.png&quot; style=&quot;zoom:65%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/uvicorn/Untitled.png&quot; style=&quot;zoom:65%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;실행-방법&quot;&gt;&lt;br /&gt;실행 방법&lt;/h2&gt;
+
+&lt;h3 id=&quot;프로그래밍-실행&quot;&gt;&lt;br /&gt;프로그래밍 실행&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;uvicorn&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;receive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;uvicorn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example:app&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log_level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;gunicorn으로-실행&quot;&gt;&lt;br /&gt;Gunicorn으로 실행&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uvicorn에는 Gunicorn 작업자 클래스가 포함되어있어 Uvicorn의 모든 성능 이점과 함께 ASGI 애플리케이션을 실행할 수 있으며 Gunicorn의 모든 기능을 갖춘 프로세스 관리를 제공한다.&lt;/li&gt;
+  &lt;li&gt;이를 통해 즉시 작업자 프로세스 수를 늘리거나 줄이고, 작업자 프로세스를 정상적으로 다시 시작하거나, 다운 타임없이 서버 업그레이드를 수행 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;프로덕션 배포의 경우 uvicorn 작업자 클래스와 함께 gunicorn을 사용하는 것이 좋다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gunicorn example:app &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; 4 &lt;span class=&quot;nt&quot;&gt;-k&lt;/span&gt; uvicorn.workers.UvicornWorker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;application-factories&quot;&gt;&lt;br /&gt;Application factories&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#example.py
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create_app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;uvicorn &lt;span class=&quot;nt&quot;&gt;--factory&lt;/span&gt; example:create_app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;참고자료&quot;&gt;&lt;br /&gt;참고자료&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.uvicorn.org/&quot;&gt;uvicorn 공식 홈&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://magic.io/blog/uvloop-blazing-fast-python-networking/&quot;&gt;uvloop: Blazing fast Python networking&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chacha95.github.io/2021-01-16-python6/&quot;&gt;uvicorn 소개&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 May 2021 12:35:23 +0000</pubDate>
+        <link>/blog/uvicorn/</link>
+        <guid isPermaLink="true">/blog/uvicorn/</guid>
+      </item>
+    
+      <item>
+        <title>gunicorn</title>
+        <description>&lt;h1 id=&quot;what-is-gunicorn&quot;&gt;&lt;br /&gt;What is gunicorn?&lt;/h1&gt;
+
+&lt;p&gt;Gunicorn은 서버이자 프로세스 관리자이다.&lt;/p&gt;
+
+&lt;p&gt;Python web application을 production 환경에 deployment 할 때 일반적으로 세가지를 섞어서 사용한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Web server&lt;/strong&gt; (e.g. Nginx)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;WSGI (web) server&lt;/strong&gt; (e.g. Gunicorn)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Web application server&lt;/strong&gt;(web app or web framwork) (e.g. Django)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Web server는 요청을 수락하고 https 연결을 처리한다. WSGI server는 web server의 요청을 받아 web application server에 전달한다. Web application server는 단일 요청을 처리 할 수 있다는 것 외에는 아무것도 신경 쓰지 않아도 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;gunicorn-특징&quot;&gt;&lt;br /&gt;&lt;strong&gt;Gunicorn 특징&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gunicorn은 다양한 web server와 상호 작용할 수 있도록 구축되었다.&lt;/li&gt;
+  &lt;li&gt;Gunicorn은 web server와 web application 사이에서 일어나는 모든 일을 처리한다. 따라서 web application을 코딩 할 때  아래 이유 때문에 다른 솔루션을 찾을 필요가 없다.
+    &lt;ul&gt;
+      &lt;li&gt;여러 web server와 통신&lt;/li&gt;
+      &lt;li&gt;한 번에 많은 request를 처리하고 부하를 분산&lt;/li&gt;
+      &lt;li&gt;실행중인 web application의 multi process 유지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gunicorn-기능-요약&quot;&gt;&lt;br /&gt;&lt;strong&gt;Gunicorn 기능 요약&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;worker processes/threads 풀을 사용하여 코드 실행&lt;/li&gt;
+  &lt;li&gt;Nginx가 보낸 request를 WSGI에 맞게 변환(request를 웹 프레임워크가 이해하고 처리할 수 있는 형식으로 변환)&lt;/li&gt;
+  &lt;li&gt;request가 들어오면 실제로 파이썬 코드 실행하기&lt;/li&gt;
+  &lt;li&gt;어플리케이션에서 보낸 WSGI response를 http response로 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;uvicorn--gunicorn&quot;&gt;&lt;br /&gt;&lt;strong&gt;Uvicorn + Gunicorn&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uvicorn에는 Gunicorn worker class가 포함되어있어 Uvicorn의 모든 성능 이점과 함께 ASGI 애플리케이션을 실행할 수 있다.&lt;/li&gt;
+  &lt;li&gt;즉, Gunicorn을 사용하여 Uvicorn을 관리하고 이를 통해 동시에 여러 process를 실행할 수 있다.&lt;/li&gt;
+  &lt;li&gt;Uvicorn과 Gunicorn은 “&lt;strong&gt;web server”&lt;/strong&gt; 범주에 속한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;참고자료&quot;&gt;&lt;br /&gt;참고자료&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FastAPI에서 공식적으로 제공하는 &lt;a href=&quot;https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 30 Apr 2021 14:35:23 +0000</pubDate>
+        <link>/blog/gunicorn/</link>
+        <guid isPermaLink="true">/blog/gunicorn/</guid>
+      </item>
+    
+      <item>
+        <title>pypubsub</title>
+        <description>&lt;h1 id=&quot;what-is-pypubsub&quot;&gt;&lt;br /&gt;What is pypubsub?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;publish-subscribe API를 제공하여 쉽게 사용할 수 있도록 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;Observer 패턴&lt;/span&gt; 사용을 가능하게 해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;observer-패턴이란&quot;&gt;&lt;br /&gt;Observer 패턴이란?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;객체의 상태 변화를 관찰하는 관찰자들, 즉 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다 메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴이다.&lt;/li&gt;
+  &lt;li&gt;즉, 상태를 가지고 있는 주체 객체와 상태의 변경을 알아야 하는 관찰 객체가 존재하며 이들의 관계는 1:1 혹은 1:N 이 될 수 있는데 이 때, 객체들 사이에서 다양한 처리를 할 수 있도록 해주는 패턴을 의미한다. 이 때, 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체들한테 연락이 가고 자동으로 내용이 갱신되는 방식으로 one-to-many 의존성으로 정의된다.&lt;/li&gt;
+  &lt;li&gt;옵저버 패턴을 사용하면, subject 와 observer 가 느슨하게 결합되어 있는 객체 디자인을 제공할 수 있다. 그럼으로 인해 옵저버의 추가, 제거가 자유로워지고, 새로운 형식의 옵저버를 추가하기도 쉬워진다. 또한 한 옵저버에서 변경이 일어났다고 해서 다른 옵저버에 영향을 주는 일이 사라지게 된다.&lt;/li&gt;
+  &lt;li&gt;사실 대부분의 이벤트들이 옵저버 패턴 방식으로 사용되고 있다. 예를 들면 &lt;strong&gt;Android 의 Event Listenr&lt;/strong&gt;, &lt;strong&gt;node.js 의 event Loop&lt;/strong&gt;, &lt;strong&gt;브라우저의 Event Handler&lt;/strong&gt; 등이 있다.&lt;/li&gt;
+  &lt;li&gt;예를 들어 Button 이 클릭되었다 할때, 거기에 Event 가 달리고 버튼이 클릭될때마다 특정 행동을 하도록 Observer 에게 알리는 패턴이 사용되곤 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;observer-장점과-단점&quot;&gt;&lt;br /&gt;Observer 장점과 단점&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;장점
+    &lt;ol&gt;
+      &lt;li&gt;느슨한 결합으로 인하여 시스템이 유연해지고, 객체간의 의존성을 쉽게 제거할 수 있다.&lt;/li&gt;
+      &lt;li&gt;pull 방식이 아닌 push 방식을 사용함으로써 직관적으로 이해하기 쉽다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;단점
+    &lt;ol&gt;
+      &lt;li&gt;Thread safe 하지 않아 구독을 신청/취소하는 동안 원하는 결과값을 얻기 힘들수도 있다.&lt;/li&gt;
+      &lt;li&gt;observer 를 제때 제거해주지 않으면 메모리 누수가 일어날 수 있다.&lt;/li&gt;
+      &lt;li&gt;너무 많이 사용하게 되면, 상태 관리가 힘들 수 있다.&lt;/li&gt;
+      &lt;li&gt;비동기 방식이기 때문에 이벤트 구독을 원하는 순서대로 받지 못할 수 있습니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-can-you-do-with-the-pypubsub&quot;&gt;&lt;br /&gt;What can you do with the pypubsub?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이벤트 기반 프로그래밍을 가능하게 해준다.&lt;/li&gt;
+  &lt;li&gt;어플리케이션 메모리 내 components 분리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;characteristics-of-pypubsub&quot;&gt;&lt;br /&gt;Characteristics of pypubsub&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Message Sender : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pub.sendMessage()&lt;/code&gt;를 호출하는 코드로 메세지 발신인&lt;/li&gt;
+  &lt;li&gt;Message Topic : 모든 메세지는 문자열 이름으로 정의된 고유한 “Topic” 을 가진다.&lt;/li&gt;
+  &lt;li&gt;Message Data : Message Sender에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pub.sendMessage(topic, **data)&lt;/code&gt; 를 통해 어떤 keyword든 arguments로 사용할 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;Topic과 연관된 메시지 데이터가 없거나 필수 및 선택적 데이터가 혼합되어있을 수 있다. 이를 MDS (Message Data Specification) 한다.&lt;/li&gt;
+      &lt;li&gt;child topic MDS는 parent topic MDS보다 제한적일 수 없다.&lt;/li&gt;
+      &lt;li&gt;Topic에 대해 MDS를 설정하면 어플리케이션의 런타임 동안 변경되지 않는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Message Listener : 모든 Message Listener 는 주어진 Topic의 메시지를 수신하기 위해 Topic의 MDS와 호환되는 서명이  한다.&lt;/li&gt;
+  &lt;li&gt;Message Delivery
+    &lt;ul&gt;
+      &lt;li&gt;전송 된 메시지는 특정 Topic의 등록 된 모든 리스너에게 전달된다.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전달 순서는 정해지지 않으며 언제든지 변경 될 수 있다. 이것은 Observer 패턴의 기본이며, 애플리케이션의 리스너는 주어진 메시지를 받는 순서에 의존하지 않도록 설계되어야 한다.&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;메시지는 동기식으로 전달된다. 리스너는 메시지가 다음 리스너에게 전달되기 전에 예외를 반환해야 한다.&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;예외가 발생한 리스너가 있더라도 나머지 리스너가 메시지를 수신하는 것을 막지 않는다.&lt;/li&gt;
+      &lt;li&gt;전송된 메시지는 Message Sender에게 반환되기 전에 Topic에 등록 된 모든 리스너에게 전달된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Message Immutability(메세지 불변성)  : 메시지 내용은 리스너에 의해 변경하지 않은 채로 두어야 하지만 PyPubSub이 따로 확인하지는 않는다.&lt;/li&gt;
+  &lt;li&gt;Message Direction(메세지 방향) : 메세지는 Message Sender→ Message Listener 로 단방향이다. 물론, Message Sender가 콜백을 메세지 데이터로 포함시키고, 각 리스터가 합의 된 데이터로 해당 콜백을 호출하게 할 수 있지만, 결합을 증가시키기 때문에 추천하지 않는다.&lt;/li&gt;
+  &lt;li&gt;Message Source : PyPubSub는 메시지 출처에 관한 정보를 Message Listener에게 제공하지 않는다. 물론 Message Sender는 메시지 데이터와 함께 이러한 정보를 포함 할 수 있지만 이것은 Observer 패턴의 목적에 부합하지 않으므로 권장 되지 않는다 .&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;pypubsub-도식화&quot;&gt;&lt;br /&gt;Pypubsub 도식화&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/pypubsub/pypubsub.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;사용법&quot;&gt;&lt;br /&gt;사용법&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;추후 직접 예제코드를 첨부하겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;&lt;br /&gt;참고 자료&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pypubsub.readthedocs.io/en/v4.0.3/&quot;&gt;PyPubSub 공식 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.finxter.com/publish-subscribe-pypubsub/&quot;&gt;Creating Your First Publish Subscribe App in Python&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Apr 2021 13:19:12 +0000</pubDate>
+        <link>/blog/pypubsub/</link>
+        <guid isPermaLink="true">/blog/pypubsub/</guid>
+      </item>
+    
+      <item>
+        <title>masrshmallow</title>
+        <description>&lt;h1 id=&quot;what-is-marshmallow&quot;&gt;&lt;br /&gt;What is marshmallow?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python 객체 → 기본 Python 데이터 타입으로 변환하는 라이브러리&lt;/li&gt;
+  &lt;li&gt;ORM / ODM 프레임워크에 구애받지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-can-you-do-with-the-marshmallow&quot;&gt;&lt;br /&gt;What can you do with the marshmallow?&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;serializing : Python 객체를 기본 Python 데이터 타입으로 직렬화 한다.&lt;/li&gt;
+  &lt;li&gt;deserializing : 입력 데이터를 Python 객체로 역직렬화 한다&lt;/li&gt;
+  &lt;li&gt;validation : 입력 데이터의 유효성을 검사한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;serializing-objects-dumping&quot;&gt;&lt;br /&gt;Serializing Objects (“Dumping”)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스키마의 메서드에 객체를 전달하여 객체를 직렬화 한다 .&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetimeas&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# User 모델 작성
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+				&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+	      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;created_at&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__repr__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;User(name={self.name!r})&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;marshmallow&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 속성이름을 Field 객체에 맵핑하는 스키마 작성
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;created_at&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprintimport&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Monty&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;monty@python.org&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# {
+#  &quot;name&quot;: &quot;Monty&quot;,
+#  &quot;email&quot;: &quot;monty@python.org&quot;,
+#  &quot;created_at&quot;: &quot;2014-08-17T14:54:16.049594+00:00&quot;
+# }
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# dumps를 이용하면 json인코딩 문자열로 직렬화 할 수도 있다.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# '{&quot;name&quot;: &quot;Monty&quot;, &quot;email&quot;: &quot;monty@python.org&quot;, &quot;created_at&quot;: &quot;2014-08-17T14:54:16.049594+00:00&quot;}'
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;deserializing-to-objects-loading&quot;&gt;&lt;br /&gt;Deserializing to Objects (“Loading”)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입력 dict()의 유효성을 검사하고 스키마의  load 메서드에 전달한 후 최종적으로 @post_load가 데코레이팅 되어 역직렬화 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;marshmallow&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post_load&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;created_at&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post_load&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;make_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ronnie&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ronnie@stones.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;lt;User(name='Ronnie')&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;validation&quot;&gt;&lt;br /&gt;Validation&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;marshmallow&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ValidationError&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mick@stones.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Mick&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;invalid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Invalid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# invalid email
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;keith@stones.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Keith&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;charlie@stones.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# missing &quot;name&quot;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UserSchema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;many&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ValidationError&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;messages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# {
+&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;#	1: {'email': ['Not a valid email address.']},
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#   3: {'name': ['Missing data for required field.']}
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# }
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;참고-자료&quot;&gt;&lt;br /&gt;참고 자료&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://marshmallow.readthedocs.io/en/stable/quickstart.html#serializing-objects-dumping&quot;&gt;Quickstart - marshmallow 3.11.1 documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://minwook-shin.github.io/python-converting-object-to-datatype-using-marshmallow/&quot;&gt;Python 객체에서 데이터 타입으로 바꾸는 marshmallow 라이브러리 알아보기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://livlikwav.github.io/flask/Flask-marshmallow/&quot;&gt;Flask-marshmallow로 편하게 데이터~객체 관리하기&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Apr 2021 12:41:23 +0000</pubDate>
+        <link>/blog/masrshmallow/</link>
+        <guid isPermaLink="true">/blog/masrshmallow/</guid>
+      </item>
+    
+      <item>
+        <title>[AWS] 2. VPC 구성 - 2</title>
+        <description>&lt;h1 id=&quot;aws-2-vpc-구성---2&quot;&gt;[AWS] 2. VPC 구성 - 2&lt;br /&gt;&lt;br /&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;앞서-vpc-구성--1-에서는-아래에-대한-내용을-진행하였다&quot;&gt;앞서 [VPC 구성 -1] 에서는 아래에 대한 내용을 진행하였다.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;VPC 구성&lt;/li&gt;
+  &lt;li&gt;퍼블릭 / 프라이빗 서브넷 생성&lt;/li&gt;
+  &lt;li&gt;IGW 생성 및 VPC 연동&lt;/li&gt;
+  &lt;li&gt;퍼블릭 라우팅 테이블 생성 + 퍼블릭 서브넷 연결&lt;/li&gt;
+  &lt;li&gt;퍼블릭 라우팅 테이블 라우팅 경로 설정&lt;/li&gt;
+  &lt;li&gt;EC2 검증&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;이번에는-아래-내용을-진행한다&quot;&gt;이번에는 아래 내용을 진행한다.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;NAT 게이트웨이 생성&lt;/li&gt;
+  &lt;li&gt;프라이빗 라우팅 테이블 생성 + 프라이빗 서브넷 연결&lt;/li&gt;
+  &lt;li&gt;프라이빗 라우팅 테이블 경로 추가&lt;/li&gt;
+  &lt;li&gt;EC2 검증&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;현재까지-진행한-vpc-도식화는-아래와-같다&quot;&gt;현재까지 진행한 VPC 도식화는 아래와 같다.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;프라이빗 서브넷은 아직 기본 라우팅 테이블을 사용 중이다
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;nat-게이트웨이-생성&quot;&gt;&lt;br /&gt;NAT 게이트웨이 생성&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NAT 게이트웨이의 역할은 아래와 같다. 즉, 프라이빗 서브넷 인스턴스의 프라이빗 IP를 퍼블릭 IP로 변환하여 외부 인터넷으로 연결할 수 있게 해준다. 또한, NAT 게이트웨이는 한쪽 방향으로만 동작하기 때문에, 프라이빗 서브넷 → 외부 인터넷으로 통신이 가능하지만 외부 인터넷 → 프라이빗 서브넷으로 통신은 불가능하다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%201.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프라이빗 서브넷에서 외부 인터넷 구간 통신을 하기 위해 NAT 게이트웨이를 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%202.png&quot; style=&quot;zoom:55%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2개의 퍼블릭 서브넷에 NAT를 생성할 것이기 때문에 아래와 같이 생성한다. 이후, NAT를 하나 더 생성한다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NAT는 위치상 퍼블릭 서브넷에 생성해야 한다&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%203.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성된 NAT 게이트웨이를 확인한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%204.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프라이빗-라우팅-테이블-생성-및-서브넷-연결&quot;&gt;&lt;br /&gt;프라이빗 라우팅 테이블 생성 및 서브넷 연결&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;프라이빗 라우팅 테이블을 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%205.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2개의 프라이빗 라우팅 테이블을 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%206.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성된 라우팅 테이블을 확인한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%207.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프라이빗 라우팅 테이블과 프라이빗 서브넷을 연결한다. 각 가용영역(2a, 2c)를 확인하여 연결해준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%208.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%209.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Private-2a-RT → Private-2a-SN, Private-DB-2a-SN
+  Private-2c-RT → Private-2c-SN, Private-DB-2c-SN
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프라이빗-라우팅-테이블-경로-추가&quot;&gt;&lt;br /&gt;프라이빗 라우팅 테이블 경로 추가&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;프라이빗 라우팅 테이블에 NAT 게이트웨이를 추가한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2010.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2011.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재까지 VPC 도식화는 아래와 같다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2012.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;검증&quot;&gt;&lt;br /&gt;검증&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;EC2를 생성한다. 크게 주의할 점은 없고 VPC와 프라이빗 서브넷만 제대로 지정해 준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2013.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;고급 세부 정보 → 사용자 데이터에 아래 내용을 추가한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2014.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;qwe123&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;qwe123&quot;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; | passwd &lt;span class=&quot;nt&quot;&gt;--stdin&lt;/span&gt; root
+  &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;s/^PasswordAuthentication no/PasswordAuthentication yes/g&quot;&lt;/span&gt; /etc/ssh/sshd_config
+  &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;s/^#PermitRootLogin yes/PermitRootLogin yes/g&quot;&lt;/span&gt; /etc/ssh/sshd_config
+  service sshd restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SSH 접속 시 EC2 인스턴스에 키페어 없이 root 계정의 암호 입력 방식으로 로그인을 하는 script이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안그룹, 보안 키 생성 후 EC2를 생성한다. 인스턴스가 생성되면 지정한 VPC와 서브넷, IPv4 주소를 제대로 가져왔는지 확인해본다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2015.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EC2가 프라이빗 서브넷에 있기 때문에 퍼블릭 서브넷처럼 접근할 수가 없다. 따라서, Bastion 서버를 올려서 접근해야 하지만, 이 부분은 추후에 다른 세션으로 다뤄보고, 위에서 입력한 유저데이터의 암호 접근방식으로 접속 해보겠다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-2/Untitled%2016.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;핑이 잘 나가는 것을 확인한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;여기까지-해서-vpc-구성을-완료해-보았다&quot;&gt;여기까지 해서 VPC 구성을 완료해 보았다.&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 21 Apr 2021 04:12:42 +0000</pubDate>
+        <link>/blog/aws-vpc-2/</link>
+        <guid isPermaLink="true">/blog/aws-vpc-2/</guid>
+      </item>
+    
+      <item>
+        <title>[AWS] 1. VPC 구성 - 1</title>
+        <description>&lt;h1 id=&quot;aws-1-vpc-구성---1&quot;&gt;[AWS] 1. VPC 구성 - 1&lt;br /&gt;&lt;br /&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;vpcvirtual-private-cloud&quot;&gt;VPC(Virtual Private Cloud)&lt;/h2&gt;
+
+&lt;h3 id=&quot;aws-클라우드-내-논리적으로-독립된-섹션을-말하며-사용자가-정의한-가상-네트워크상에서-다양한-aws-리소스를-실행할-수-있게-지원한다-즉-독립된-가상의-클라우드-네트워크이다&quot;&gt;AWS 클라우드 내 논리적으로 독립된 섹션을 말하며, 사용자가 정의한 가상 네트워크상에서 다양한 AWS 리소스를 실행할 수 있게 지원한다. 즉, &lt;span style=&quot;color:red&quot;&gt;독립된 가상의 클라우드 네트워크&lt;/span&gt;이다.&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;구성할-vpc-아키텍처는-아래와-같다&quot;&gt;구성할 VPC 아키텍처는 아래와 같다.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled.png&quot; style=&quot;zoom:55%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;vpc-생성&quot;&gt;&lt;br /&gt;VPC 생성&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;처음 VPC로 가보면 AWS에서 생성해 논 Default VPC를 볼 수 있다. 나의 사용용도에 맞게 재 구성할 것이기 때문에 해당 VPC 생성 버튼을 클릭한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%201.png&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;VPC를 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%202.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;VPC 생성을 확인한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%203.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%204.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  10.0.0.0/16 대역의 VPC를 생성하여 가상의 네트워크 환경을 구성한다. 이 가상의 네트워크에는 가상 라우터가 존재하며, 기본 라우팅 테이블을 활용한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퍼블릭--프라이빗-서브넷-생성&quot;&gt;&lt;br /&gt;퍼블릭 / 프라이빗 서브넷 생성&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS에서 생성한 Default VPC의 서브넷들을 볼 수 있다. 서브넷 생성 버튼을 클릭한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%205.png&quot; style=&quot;zoom:30%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;총 6개의 서브넷(Public 2개 / Server Private 2개 / DB Private 2개)을 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;생성시에 서비스명 + 형태 + 가용영역 + SN(서브넷약자) 로 네이밍을 하였다.&lt;/p&gt;
+
+    &lt;p&gt;Apartalk-Public-2c-SN / Apartalk-Public-2a-SN&lt;/p&gt;
+
+    &lt;p&gt;Apartalk-Private-Server-2c-SN / Apartalk-Private-Server-2a-SN&lt;/p&gt;
+
+    &lt;p&gt;Apartalk-Private-DB-2c-SN / Apartalk-Private-DB-2a-SN&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%206.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성 후 VPC로 필터링을 하여 서브넷이 제대로 생성된 것을 확인한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%207.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  아직 인터넷 게이트웨이가 연결되지 않은 상태이기 때문에 Public 서브넷 역시 Private인 상태이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;인터넷-게이트웨이-생성--vpc-연결&quot;&gt;&lt;br /&gt;인터넷 게이트웨이 생성 + VPC 연결&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;편의상 인터넷 게이트웨이는 약자(IGW)로 명칭하겠다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS에서 생성한 Default IGW를 볼 수 있다. IGW 생성 버튼을 클릭한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%208.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IGW를 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%209.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IGW와 생성한 VPC를 연결한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2010.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2011.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IGW + VPC 연동 도식화 (프라이빗 서브넷은 제외)&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2012.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IGW와 VPC를 연동 했지만 인터넷 구간으로 향하는 라우팅 경로가 없기 때문에 외부 인터넷 통신은 불가능한 환경이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;퍼블릭-라우팅-테이블-생성-및-서브넷-연결&quot;&gt;&lt;br /&gt;퍼블릭 라우팅 테이블 생성 및 서브넷 연결&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;라우팅 테이블을 생성한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2013.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성한 VPC와 연결한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2014.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성한 퍼블릭 라우팅 테이블에 퍼블릭 서브넷을 연결한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2015.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2016.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재까지 진행한 라우팅 테이블 + 서브넷 연동을 도식화하면 아래와 같다. (프라이빗 서브넷은 제외)&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2017.png&quot; style=&quot;zoom:65%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퍼블릭-라우팅-테이블-경로-추가&quot;&gt;&lt;br /&gt;퍼블릭 라우팅 테이블 경로 추가&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;퍼블릭 라우팅 테이블에 외부 인터넷 통신을 위한 라우팅 경로를 설정한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2018.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 네트워크(0.0.0.0/0)가 IGW로 향하는 라우팅 경로를 추가한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2019.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재까지 진행한 라우팅 테이블 도식화 (프라이빗 서브넷은 제외)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2020.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;외부 인터넷 통신을 위한 라우팅 경로를 추가하였다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;검증&quot;&gt;&lt;br /&gt;검증&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;EC2를 생성한다. 크게 주의할 점은 없고 VPC와 퍼블릭 서브넷만 제대로 지정해 준다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2021.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;고급 세부 정보 → 사용자 데이터에 아래 내용을 추가한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2022.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+  yum &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;httpd php mysql php-mysql
+  chkconfig httpd on
+  systemctl start httpd
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; /var/www/html/bootcamp-app.tar.gz &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /var/www/html
+     wget https://s3.amazonaws.com/awstechbootcamp/GettingStarted/bootcamp-app.tar.gz
+     &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvfz bootcamp-app.tar.gz
+     &lt;span class=&quot;nb&quot;&gt;chown &lt;/span&gt;apache:root /var/www/html/rds.conf.php
+  &lt;span class=&quot;k&quot;&gt;fi
+  &lt;/span&gt;yum &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c&quot;&gt;#include https://go.aws/38GIqcB&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안 그룹 추가&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2023.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;보안 키 생성 후 EC2를 생성한다. 인스턴스가 생성되면 지정한 VPC와 서브넷, IPv4 주소를 제대로 가져왔는지 확인해본다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2024.png&quot; style=&quot;zoom:45%;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;퍼블릭 IP로 접속하면 아파치 테스트 화면이 제대로 동작한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/../../assets/img/posts/aws-vpc-1/Untitled%2025.png&quot; style=&quot;zoom:40%;&quot; /&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  원래는 사용자 데이터에 입력한 bootcamp 화면이 떠야 정상이지만 현재 403 에러로 wget 을 받지 못하는 것을 확인하였다. 
+  기존에 잘 동작하던 다른 AMI로 실행해도 마찬가지인 것을 봤을 때 아래 링크에 문제가 생긴 것 같다.
+  https://s3.amazonaws.com/awstechbootcamp/GettingStarted/bootcamp-app.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 19 Apr 2021 11:38:23 +0000</pubDate>
+        <link>/blog/aws-vpc-1/</link>
+        <guid isPermaLink="true">/blog/aws-vpc-1/</guid>
+      </item>
+    
+      <item>
+        <title>백엔드 엔지니어 남기혁 입니다</title>
+        <description>&lt;h3 id=&quot;필요없는-내용삭제&quot;&gt;필요없는 내용삭제&lt;/h3&gt;
+&lt;h3 id=&quot;테스트&quot;&gt;테스트&lt;/h3&gt;
+
+&lt;!-- &lt;img src=&quot;/../../assets/img/cbnu.png&quot; style=&quot;zoom:25%;&quot; /&gt; --&gt;
+&lt;!-- &lt;img src=&quot;/../../assets/img/posts/cupist.png&quot; style=&quot;zoom:80%;&quot; /&gt; --&gt;
+</description>
+        <pubDate>Tue, 13 Apr 2021 05:35:23 +0000</pubDate>
+        <link>/blog/start-tech-blog/</link>
+        <guid isPermaLink="true">/blog/start-tech-blog/</guid>
+      </item>
+    
+
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title></title>
+            <description>&lt;h3&gt;  {{ page.title }} &lt;/h3&gt;
+
+&lt;div id=&quot;categories&quot;&gt;
+{% for category in site.categories %}
+  &lt;div class=&quot;category-box&quot; &gt;
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    &lt;div id=&quot;#{{ category_name | slugize }}&quot;&gt;&lt;/div&gt;
+    &lt;h4 class=&quot;category-head&quot;&gt;&lt;a href=&quot;{{ site.baseurl }}/blog/categories/{{ category_name }}&quot;&gt;{{ category_name }}&lt;/a&gt;&lt;/h4&gt;
+    &lt;a name=&quot;{{ category_name | slugize }}&quot;&gt;&lt;/a&gt;
+     {% for post in site.categories[category_name] %}
+    &lt;article class=&quot;center&quot;&gt;
+      &lt;h6 &gt;&lt;a href=&quot;{{ site.baseurl }}{{ post.url }}&quot;&gt;{{post.title}}&lt;/a&gt;&lt;/h6&gt;
+    &lt;/article&gt;
+
+
+    {% endfor %}
+
+  &lt;/div&gt;
+{% endfor %}
+&lt;/div&gt;
+
+
+</description>
+            <link>/blog/categories/</link>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.aws %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/aws/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>ETC</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.etc %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/etc/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.framework %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/framework/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Get Started</title>
+            <description>## Getting Started - How to use “devlopr-jekyll” theme
+
+## What's Jekyll ?
+
+If you aren’t familiar with Jekyll yet, you should know that it is a static site generator. It will transform your plain text into static websites and blogs. No more databases, slow loading websites, risk of being hacked…just your content. And not only that, with Jekyll you get free hosting with GitHub Pages! If you are a beginner we recommend you start with [Jekyll’s Docs](https://jekyllrb.com/docs/installation/). Now, if you know how to use Jekyll, let’s move on to using this theme in Jekyll:
+
+### Steps to create your blog using devlopr-jekyll and Host using Github Pages :
+
+&gt;  **Step 1.**  Fork the repo - [click here](https://github.com/sujaykundu777/devlopr-jekyll/fork)
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork1.png){:class=&quot;img-fluid&quot;}
+
+&gt; **Step 2.** Use **your-github-username.github.io** as the new repo  ( Replace your-github-username with yours). Remember if you use the name other than your-github-username.github.io , your blog will be built using gh-pages branch.
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork2.png){:class=&quot;img-fluid&quot;}
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork3.png){:class=&quot;img-fluid&quot;}
+
+&gt; **Step 3.** Clone the new repo locally to make changes :
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork31.png){:class=&quot;img-fluid&quot;}
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork32.png){:class=&quot;img-fluid&quot;}
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork33.png){:class=&quot;img-fluid&quot;}
+
+```bash
+ $ git clone https://github.com/yourusername/yourusername.github.io
+ $ cd yourusername.github.io
+ $ code .
+```
+
+&gt; **Step 4.** Open the files using VSCode and edit _config.yml and edit with your details:
+
+- _config.yml file - replace with your own details
+- _posts - Add your blog posts here
+- _includes - You can replace the contents of the files with your data. (contains widgets)
+- _assets/img - Add all your images here
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork34.png){:class=&quot;img-fluid&quot;}
+
+&gt; **Step 5** - Install the development requirements:
+
+### Set up local development environment
+
+1. [Git](https://git-scm.com/)
+2. [Ruby](https://www.ruby-lang.org/) and [Bundler](https://bundler.io/)
+3. [VSCode](https://code.visualstudio.com/download)
+
+We need ruby and bundler to build our site locally. After installation check if its working:
+
+For ruby :
+
+```bash
+$ ruby -v
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
+```
+For bundler :
+
+```bash
+$ gem install bundler
+$ bundler -v
+Bundler version 2.1.4
+```
+Add jekyll :
+
+```bash
+$ bundle add jekyll
+```
+ This command will add the Jekyll gem to our Gemfile and install it to the ./vendor/bundle/ folder.
+
+You can check the jekyll version
+
+```
+$ bundle exec jekyll -v
+jekyll 4.0.0
+```
+
+&gt; **Step 6.** Install the gem dependencies by running the following command
+
+```bash
+$ bundle update
+$ bundle install
+```
+
+&gt; **Step 7.** Serve the site locally by running the following command below:
+
+```bash
+$ bundle exec jekyll serve --watch
+```
+or you can also serve using :
+
+```bash
+$ jekyll serve
+```
+
+Visit [http://localhost:4000](http://localhost:4000) for development server
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork4.png){:class=&quot;img-fluid&quot;}
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork41.png){:class=&quot;img-fluid&quot;}
+
+### Adding Content
+
+Start populating your blog by adding your .md files in _posts. devlopr-jekyll already has a few examples.
+
+#### YAML Post Example:
+
+```yml
+---
+layout: post
+title: Sample Post
+author: Sujay Kundu
+date: '2019-05-21 14:35:23 +0530'
+category:
+        - jekyll
+summary: This is the summary for the sample post
+thumbnail: sample.png
+---
+
+Hi ! This is sample post.
+
+```
+
+#### YAML Page Example:
+
+```yml
+---
+layout: page
+title: Sample Page
+menus: header
+permalink: /sample-page/
+---
+
+Hi ! This is sample page.
+```
+
+#### Editing stylesheet
+
+You’ll only work with a single file to edit/add theme style: assets/css/main.scss.
+
+### Deploy your Changes
+
+Once happy with your blog changes. Push your changes to master branch.
+
+&gt; **Step 8.** Push Your Local Changes
+
+```bash
+ $ git add .
+ $ git commit -m &quot;my new blog using devlopr-jekyll&quot;
+ $ git push origin master
+```
+
+Visit your Github Repo settings ! Enable master branch as Github Pages Branch :
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork6.png){:class=&quot;img-fluid&quot;}
+
+&gt; **Step 9.** Deploy your Blog :
+
+![Devlopr Jekyll Repo](/assets/img/posts/fork7.png){:class=&quot;img-fluid&quot;}
+
+&gt; Congrats ! On your new shining Blog !
+
+You can visit the blog using [http://your-github-username.github.io](http://your-github-username.github.io).
+
+</description>
+            <link>/get-started/</link>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.library %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/library/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.python %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/python/</link>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Guides</title>
+            <description>&lt;h5&gt; Posts by Category : {{ page.title }} &lt;/h5&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+{% for post in site.categories.server %}
+ &lt;li class=&quot;category-posts&quot;&gt;&lt;span&gt;{{ post.date | date_to_string }}&lt;/span&gt; &amp;nbsp; &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/div&gt;</description>
+            <link>/blog/categories/server/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+        
+          <item>
+            <title>Our Sponsors</title>
+            <description>Thanks to all the amazing contributors and our Backers for the support.
+
+- [Dirish Mohan](https://dirishmohan.com)</description>
+            <link>/sponsors/</link>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Styleguide</title>
+            <description>&lt;h1 class=&quot;text-center&quot;&gt; devlopr jekyll - Styleguide &lt;/h1&gt;
+
+&lt;hr /&gt;
+
+ &lt;img src=&quot;/assets/img/styleguide.png&quot; class=&quot;img-fluid&quot;&gt;
+
+&lt;p&gt; Lets try the different text styles  &lt;b&gt; Bold &lt;/b&gt; , &lt;strong&gt; Strong &lt;/strong&gt;, &lt;em&gt; Emphasis &lt;/em&gt;, &lt;i&gt; Italic &lt;/i&gt; &lt;/p&gt;
+
+
+&lt;p&gt; Now, lets try different heading styles : &lt;/p&gt;
+
+&lt;h1&gt; Hello in h1 ! &lt;/h1&gt;
+&lt;h2&gt; Hello in h2 ! &lt;/h2&gt;
+&lt;h3&gt; Hello in h3 ! &lt;/h3&gt;
+&lt;h4&gt; Hello in h4 ! &lt;/h4&gt;
+&lt;h5&gt; Hello in h5 ! &lt;/h5&gt;
+&lt;h6&gt; Hello in h6 ! &lt;/h6&gt;
+
+&lt;hr /&gt;
+&lt;p&gt; Unordered List &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; List Item 1 &lt;/li&gt;
+&lt;li&gt; List Item 2 &lt;/li&gt;
+&lt;li&gt; List Item 3 &lt;/li&gt;
+&lt;li&gt; List Item 4 &lt;/li&gt;
+&lt;li&gt; List Item 5 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; Ordered List &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt; List Item 1 &lt;/li&gt;
+&lt;li&gt; List Item 2 &lt;/li&gt;
+&lt;li&gt; List Item 3 &lt;/li&gt;
+&lt;li&gt; List Item 4 &lt;/li&gt;
+&lt;li&gt; List Item 5 &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a Block Quote,  It can Expand Multiple Lines &lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text. &lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt; This line of text is meant to be deleted text &lt;/del&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;This line of text will render as underlined&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr title=&quot;attribute&quot;&gt;attr&lt;/abbr&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr title=&quot;HyperText Markup Language&quot; class=&quot;initialism&quot;&gt;HTML&lt;/abbr&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;responsive-table&quot;&gt;
+&lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;col&quot;&gt;#&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Heading&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+          &lt;td&gt;Cell&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;YouTube Responsive Embed&lt;/h3&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/nuwjUZCSB2Y?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt;Vimeo Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/212114694?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;ted-responsive-embed&quot;&gt;TED Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://embed.ted.com/talks/ted_halstead_a_climate_solution_where_all_sides_can_win&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;twitch-responsive-embed&quot;&gt;Twitch Responsive Embed&lt;/h3&gt;
+
+&lt;iframe src=&quot;https://player.twitch.tv/?autoplay=false&amp;amp;video=v248755437&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; scrolling=&quot;no&quot; height=&quot;378&quot; width=&quot;620&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;soundcloud-embed&quot;&gt;SoundCloud Embed&lt;/h3&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29738591&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;codepen-embed&quot;&gt;CodePen Embed&lt;/h3&gt;
+
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;YWvpRo&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;kharrop&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Referral Form&quot; class=&quot;codepen&quot;&gt;&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;syntax-highlighting&quot;&gt;Syntax Highlighting&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'markdown'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can add inline code just like this, E.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;.code { color: #fff; }&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f4f4f4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub gist Embed&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/ahmadajmi/dbb4f713317721668bcbc39420562afc.js&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;input-style&quot;&gt;Input Style&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;text&quot; placeholder=&quot;I'm an input field!&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt; Twitter Embed &lt;/h3&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I just published “Deploying a blog using Jekyll and Github Pages with SSL certificate for Free” &lt;a href=&quot;https://t.co/B3T3IQVU93&quot;&gt;https://t.co/B3T3IQVU93&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sujay Kundu (@SujayKundu777) &lt;a href=&quot;https://twitter.com/SujayKundu777/status/1012601950469160962?ref_src=twsrc%5Etfw&quot;&gt;June 29, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h3&gt; Instagram Embed &lt;/h3&gt;
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BhFTg6uhNRi/&quot; data-instgrm-version=&quot;9&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;&lt;a href=&quot;https://www.instagram.com/p/BhFTg6uhNRi/&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;&quot; target=&quot;_blank&quot;&gt;A post shared by Ahmad Ajmi (@ahmadajme)&lt;/a&gt; on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-04-02T21:18:58+00:00&quot;&gt;Apr 2, 2018 at 2:18pm PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt; &lt;script async defer src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
+
+</description>
+            <link>/styleguide/</link>
+          </item>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+  </channel>
+</rss>
